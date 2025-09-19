@@ -325,7 +325,7 @@
         formData.append("Email", email);
         formData.append("Score", score);
 
-        const scriptURL = "https://script.google.com/macros/s/AKfycbwavpDRD7ttglCIjQjkS-LeSZGM0GlK7PEwYvCInFvwJ7MxfMeqytMvFPwH9MZJkps7/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbylwWh00EHrl6UhnXazt436FS22dfw7ncWY5biC8cIUdznQdm_S6LaJkwG5_1Yedews/exec";
         await fetch(scriptURL, { method: "POST", body: formData });
       } catch (err) {
         console.error("Submission error:", err);
@@ -356,3 +356,4 @@
   </script>
 </body>
 </html>
+
