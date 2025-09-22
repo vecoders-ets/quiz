@@ -253,7 +253,7 @@
 
     function loadQuestion() {
       const q = questions[currentQuestion];
-      questionCount.innerText = Question ${currentQuestion + 1}/${questions.length};
+      questionCount.innerText = `Question ${currentQuestion + 1}/${questions.length}`;
       questionText.innerText = q.text;
       optionsContainer.innerHTML = '';
       nextBtn.disabled = true;
@@ -297,7 +297,7 @@
       document.getElementById('questionnaire').style.display = 'none';
       const thankYouDiv = document.getElementById('thank-you');
       score = Object.values(scoreMap).filter(Boolean).length;
-      document.getElementById('result-text').innerText = Score: ${score}/20;
+      document.getElementById('result-text').innerText = `Score: ${score}/20`;
 
       const cluesList = document.getElementById('clues-list');
       cluesList.innerHTML = "";
@@ -323,7 +323,7 @@
 
         finalKeyBox.style.display = 'block';
       } else {
-        document.getElementById('result-message').innerText = "🔴 You’re Eliminated!";
+        document.getElementById('result-message').innerText = "🔴 You're Eliminated!";
         finalKeyBox.style.display = 'none';
       }
 
