@@ -197,7 +197,7 @@
 
     <!-- Quiz -->
     <div class="questionnaire" id="questionnaire" style="display:none;">
-      <div class="question-count" id="question-count">Question 1/10</div>
+      <div class="question-count" id="question-count">Question 1/20</div>
       <div class="question-text" id="question-text"></div>
       <div class="options" id="options"></div>
       <button class="next-btn" id="next-btn" disabled>Next →</button>
@@ -220,16 +220,26 @@
 
   <script>
     const questions = [
-      { text: "1. What will be the output of this Python code?\n\nlist1 = [1,2,3]\nlist2 = list1\nlist2.append(4)\nprint(list1)", options: ["a) [1, 2, 3]","b) [1, 2, 3, 4]","c) Error","d) None"], answer:"b) [1, 2, 3, 4]" },
-      { text: "2. In C, output of:\nint a=5; printf(\"%d %d %d\", a, a++, ++a);", options: ["a) 5 6 7","b) 7 6 6","c) Undefined behavior","d) 5 5 5"], answer:"c) Undefined behavior" },
-      { text: "3. Which SQL command removes a table permanently?", options: ["a) DELETE","b) DROP","c) TRUNCATE","d) REMOVE"], answer:"b) DROP" },
-      { text: "4. What will this Java code print?\n\nString s1=\"hello\";\nString s2=\"he\"+\"llo\";\nSystem.out.println(s1==s2);", options: ["a) true","b) false","c) Compilation error","d) Depends on JVM"], answer:"a) true" },
-      { text: "5. In OS, which is not a page replacement algorithm?", options: ["a) LRU","b) Optimal","c) MRU","d) SJF"], answer:"d) SJF" },
-      { text: "6. Which is NOT a characteristic of OOP?", options: ["a) Inheritance","b) Encapsulation","c) Polymorphism","d) Modularity in Assembly Code"], answer:"d) Modularity in Assembly Code" },
-      { text: "7. Python output?\n\na=[1,2,3,4]\nprint(a[-2::-1])", options: ["a) [3,2,1]","b) [4,3,2]","c) [3,2]","d) [2,1]"], answer:"a) [3,2,1]" },
-      { text: "8. In SQL, which ensures all values unique & not NULL?", options: ["a) PRIMARY KEY","b) UNIQUE","c) FOREIGN KEY","d) CHECK"], answer:"a) PRIMARY KEY" },
-      { text: "9. Which protocol is secure?", options: ["a) HTTP","b) HTTPS","c) FTP","d) SMTP"], answer:"b) HTTPS" },
-      { text: "10. Which OS statement is TRUE?", options: ["a) Deadlock occurs when no shared resources","b) Semaphore solves sync problems","c) Thrashing when CPU overloaded","d) Virtual memory decreases space"], answer:"b) Semaphore solves sync problems" }
+      { text: "1. Coding is the process of…", options: ["a) Talking to computers","b) Writing instructions for computers","c) Designing machines","d) Playing games"], answer:"b) Writing instructions for computers" },
+      { text: "2. Source code is written by…", options: ["a) Computer","b) Programmer","c) Compiler","d) Operating system"], answer:"b) Programmer" },
+      { text: "3. A compiler translates…", options: ["a) Machine code to source code","b) Source code to machine code","c) English to binary","d) Errors to warnings"], answer:"b) Source code to machine code" },
+      { text: "4. An interpreter executes the program…", options: ["a) Line by line","b) Whole at once","c) Only errors","d) Only loops"], answer:"a) Line by line" },
+      { text: "5. A variable is used to…", options: ["a) Store data","b) Debug code","c) Compile code","d) Run loops"], answer:"a) Store data" },
+      { text: "6. Array is a type of…", options: ["a) Loop","b) Variable","c) Data structure","d) Function"], answer:"c) Data structure" },
+      { text: "7. OOP stands for…", options: ["a) Open Object Program","b) Object-Oriented Programming","c) Overloaded Operation Program","d) Object Operating Process"], answer:"b) Object-Oriented Programming" },
+      { text: "8. In Python: a=5; b=2; print(a // b, a / b)", options: ["a) 2 2.5","b) 2.5 2","c) 5 2","d) Error"], answer:"a) 2 2.5" },
+      { text: "9. In Python: x=[10,20,30]; print(x[1]+x[-1])", options: ["a) 20","b) 40","c) 50","d) Error"], answer:"c) 50" },
+      { text: "10. In Python: for i in range(2,8,2): print(i,end=' ')", options: ["a) 2 3 4 5 6 7","b) 2 4 6","c) 2 8","d) Error"], answer:"b) 2 4 6" },
+      { text: "11. In Python: s='python'; print(s[1:4])", options: ["a) pyt","b) yth","c) tho","d) hon"], answer:"b) yth" },
+      { text: "12. In Python NumPy: arr=[1,2,3,4]; arr.mean()", options: ["a) 2.0","b) 2.5","c) 3","d) Error"], answer:"b) 2.5" },
+      { text: "13. In Pandas: df={'A':[1,2,3],'B':[4,5,6]}; print(df['A'].sum())", options: ["a) 6","b) 5","c) 3","d) Error"], answer:"a) 6" },
+      { text: "14. In Java: String s1='Hello'; String s2=new String('Hello'); System.out.println(s1==s2)", options: ["a) true","b) false","c) Hello","d) Error"], answer:"b) false" },
+      { text: "15. In Java: int x=5; System.out.println(x++ + ++x)", options: ["a) 11","b) 12","c) 10","d) 13"], answer:"b) 12" },
+      { text: "16. In Java: int a=10,b=20; System.out.println(a>b?a:b)", options: ["a) 10","b) 20","c) 0","d) Error"], answer:"b) 20" },
+      { text: "17. In Java: String str='Java'; System.out.println(str.length())", options: ["a) 3","b) 4","c) 5","d) Error"], answer:"b) 4" },
+      { text: "18. In C: int a=10; printf('%d', a/4*4)", options: ["a) 8","b) 10","c) 4","d) 0"], answer:"a) 8" },
+      { text: "19. In C: int a=12; printf('%d', a%5)", options: ["a) 2","b) 3","c) 5","d) 7"], answer:"a) 2" },
+      { text: "20. In C: int n=5; printf('%d', n<<1)", options: ["a) 5","b) 10","c) 2","d) 0"], answer:"b) 10" }
     ];
 
     let currentQuestion = 0;
@@ -243,7 +253,7 @@
 
     function loadQuestion() {
       const q = questions[currentQuestion];
-      questionCount.innerText = `Question ${currentQuestion + 1}/${questions.length}`;
+      questionCount.innerText = Question ${currentQuestion + 1}/${questions.length};
       questionText.innerText = q.text;
       optionsContainer.innerHTML = '';
       nextBtn.disabled = true;
@@ -287,7 +297,7 @@
       document.getElementById('questionnaire').style.display = 'none';
       const thankYouDiv = document.getElementById('thank-you');
       score = Object.values(scoreMap).filter(Boolean).length;
-      document.getElementById('result-text').innerText = `Score: ${score}/10`;
+      document.getElementById('result-text').innerText = Score: ${score}/20;
 
       const cluesList = document.getElementById('clues-list');
       cluesList.innerHTML = "";
@@ -297,7 +307,7 @@
       finalKeyMsg.innerText = "";
       document.getElementById('finalKeyInput').value = "";
 
-      if (score >= 7) {
+      if (score >= 14) {
         document.getElementById('result-message').innerText = "🟢 Clues Unlocked!";
         const clues = [
           "(1) I wait by the steps, painted bright red. In danger I scream, but now hide instead.",
@@ -311,7 +321,6 @@
           cluesList.appendChild(li);
         });
 
-        // show final key input box when clues unlocked
         finalKeyBox.style.display = 'block';
       } else {
         document.getElementById('result-message').innerText = "🔴 You’re Eliminated!";
@@ -356,4 +365,3 @@
   </script>
 </body>
 </html>
-
